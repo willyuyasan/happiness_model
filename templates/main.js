@@ -158,9 +158,9 @@ async function savesfeeddata(formdata2) {
 const formvalidation2 = data => {
     const r = data.output
     if (r!=='Feedback saved'){
-        alert('No se pudo salvar el feedback: ' + r);
+        alert('No se pudo salvar el feedback: ' + r)
         throw new Error(r)
-    };
+    }
     console.log(r)
 }
 
