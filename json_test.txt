@@ -1,0 +1,6 @@
+{"name" : "Oliver Uyasan",
+"words" : "Soy un perrito",
+"age" : "18-23 años",
+"genre" : "h",
+"labor_status" : "9",
+"check" : "on"}
