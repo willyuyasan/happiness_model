@@ -4,6 +4,7 @@ A model to give the today happiness probability
 to replicate this model on you env please:
 
 -Download this github project
+
 -Install docker and run:
         docker-compose up -d
 
