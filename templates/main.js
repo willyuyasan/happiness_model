@@ -27,6 +27,7 @@ const workformdata = e => {
     e.preventDefault()
     const formdata = new FormData(contenedor.querySelector('form')) //passing the data form
     formdata.append('id_form',Date.now())
+    //console.log(formdata)
     savesformdata(formdata) //Using the php api
 }
 
@@ -43,7 +44,8 @@ async function savesformdata(formdata) {
 
 
     } catch(error) {
-        console.error(error)
+        //console.error(error)
+        console.log('Error: ', error.message);
     }
 }
 
@@ -82,9 +84,10 @@ const getformdata = formdata => {
 
 
 // Function to connect to the model_api
+// await fetch('http://pyapp_host:5000/happiness_model' Not working
 async function happiness_model(dc_form) {
     try{
-        const response = await fetch('http://127.0.0.1:5000/happiness_model',{
+        const response = await fetch('http://localhost:5000/happiness_model',{
                             method:'post',
                             body: JSON.stringify(dc_form),
                             headers: {
@@ -102,7 +105,8 @@ async function happiness_model(dc_form) {
         showresponse(data)
 
     } catch(error) {
-        console.error(error);
+        //console.error(error);
+        console.log('Error: ', error.message);
     };
 };
 
@@ -150,7 +154,8 @@ async function savesfeeddata(formdata2) {
         showform(dc_form)
 
     } catch(error) {
-        console.error(error)
+        //console.error(error)
+        console.log('Error: ', error.message);
     }
 }
 

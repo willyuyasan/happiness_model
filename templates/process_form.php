@@ -31,10 +31,10 @@ if ($age=="--"){
 
 //connection to the database
 // Conncetion parameters
-$host = "localhost";
+$host = "mysql_host";
 $dbname = "forms";
 $username = "root";
-$password = "";
+$password = "william";
 
 //connection
 $conn = mysqli_connect(hostname: $host, 
@@ -44,10 +44,11 @@ $conn = mysqli_connect(hostname: $host,
 
 //Kills the program if connection is unsuccessful
 if (mysqli_connect_errno()){
-    die("connection error: " . mysqli_connect_error());
+    //die("connection error: " . mysqli_connect_error());
+    die('{"output": mysqli_connect_error()}');
 }
 
-//echo "connection successful.";
+//echo '{"output": "Record saved"}';
 
 //Create the sql script to insert the form data
 $sql = "INSERT INTO happiness_form (id_form, name, words, age, genre, labor_status)

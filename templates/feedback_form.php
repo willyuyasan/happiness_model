@@ -12,10 +12,10 @@ if ($real_happiness==0){
 
 //connection to the database
 // Conncetion parameters
-$host = "localhost";
+$host = "mysql_host";
 $dbname = "forms";
 $username = "root";
-$password = "";
+$password = "william";
 
 //connection
 $conn = mysqli_connect(hostname: $host, 
@@ -25,10 +25,11 @@ $conn = mysqli_connect(hostname: $host,
 
 //Kills the program if connection is unsuccessful
 if (mysqli_connect_errno()){
-    die("connection error: " . mysqli_connect_error());
+    //die("connection error: " . mysqli_connect_error());
+    die('{"output": mysqli_connect_error()}');
 }
 
-//echo "connection successful.";
+//echo '{"output": "connection succesfull"}';
 
 //Create the sql script to insert the form data
 $sql = "INSERT INTO happiness_feedback (id_form, real_happiness,happiness_probability)
